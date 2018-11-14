@@ -1,0 +1,25 @@
+<section class="sample-app-content">
+  <h1>Model-based Reactive Form Example:</h1>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <p>
+      <label>First Name:</label>
+      <input type="text" formControlName="firstName">
+    </p>
+    <div class="alert" *ngIf="!form.controls['firstName'].valid && form.controls['firstName'].touched">First Name is required</div>
+    <p>
+      <label>Last Name:</label>
+      <input type="text" formControlName="lastName">
+    </p>
+    <p>
+      <label>Password:</label>
+      <input type="password" formControlName="password">
+    </p>
+    <p>
+      <label>Description:</label>
+      <textarea formControlName="description"></textarea>
+    </p>
+    <p>
+      <button type="submit" [disabled]="!form.valid">Submit</button>
+    </p>
+  </form>
+</section>
